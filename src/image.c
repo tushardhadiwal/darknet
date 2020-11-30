@@ -444,10 +444,12 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
                         strcat(labelstr, names[j]);
                     }
                 }
-                image label = get_label_v3(alphabet, labelstr, (im.h*.02));
+                //image label = get_label_v3(alphabet, labelstr, (im.h*.02));
+                (void)rgb;
+                (void)label;
                 //draw_label(im, top + width, left, label, rgb);
-                draw_weighted_label(im, top + width, left, label, rgb, 0.7);
-                free_image(label);
+                // draw_weighted_label(im, top + width, left, label, rgb, 0.7);
+                //free_image(label);
             }
             if (selected_detections[i].det.mask) {
                 image mask = float_to_image(14, 14, 1, selected_detections[i].det.mask);
@@ -516,8 +518,10 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
             printf("\n");
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             if (alphabet) {
-                image label = get_label(alphabet, names[class_id], (im.h*.03)/10);
-                draw_label(im, top + width, left, label, rgb);
+                //image label = get_label(alphabet, names[class_id], (im.h*.03)/10);
+                //(void)label;
+                (void)rgb;
+                // draw_label(im, top + width, left, label, rgb);
             }
         }
     }
