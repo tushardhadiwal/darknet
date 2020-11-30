@@ -446,7 +446,7 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
                 }
                 //image label = get_label_v3(alphabet, labelstr, (im.h*.02));
                 (void)rgb;
-                (void)label;
+                //(void)label;
                 //draw_label(im, top + width, left, label, rgb);
                 // draw_weighted_label(im, top + width, left, label, rgb, 0.7);
                 //free_image(label);
